@@ -25,7 +25,7 @@ resource "google_compute_router" "router" {
   network = google_compute_network.vpc_network.self_link
 }
 
-#-----------------------------------------------Nat---------------------------
+#-----------------------------------------------Nat-----------------------------------
 
 resource "google_compute_router_nat" "nat" {
   name                               = "osama-nat"
@@ -37,4 +37,19 @@ resource "google_compute_router_nat" "nat" {
     name                    = google_compute_subnetwork.Management-Subnet.id
     source_ip_ranges_to_nat = ["ALL_IP_RANGES"]
   }
+}
+#-----------------------------------------------Firewall---------------------------
+resource "google_compute_firewall" "bastion-ssh" {
+  name          = "osama-ssh-firewall"
+  network       = google_compute_network.vpc_network.self_link
+  direction     = "INGRESS"
+  
+  source_ranges = ["0.0.0.0/0"] 
+
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+
+  target_tags = ["bastion"]
 }
