@@ -5,6 +5,7 @@ resource "google_service_account" "node-acc" {
 }
 resource "google_project_iam_member" "node-binding" {
   role   = "roles/storage.objectViewer"
+  
   member = "serviceAccount:${google_service_account.node-acc.email}"
 }
 

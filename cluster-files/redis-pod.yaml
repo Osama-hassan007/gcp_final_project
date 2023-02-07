@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redispod
+spec:
+  containers:
+  - name: redis
+    image: gcr.io/osama-375715/gcp_final_redis
+    ports:
+    - containerPort: 80

@@ -3,6 +3,7 @@ resource "google_container_cluster" "MYGKE" {
   name               = "osos-cluster"
   location           = "us-central1-c"
   initial_node_count = "1"
+  remove_default_node_pool = true
   ip_allocation_policy {
     
   }
