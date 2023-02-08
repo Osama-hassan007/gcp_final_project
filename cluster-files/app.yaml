@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: my-app
+  template:
+    metadata:
+      labels:
+        name: my-app
+    spec:
+      containers:
+      - name: my-app
+        image: gcr.io/osama-375715/gcp_final_image
+        ports:
+        - containerPort: 80
+        envFrom:
+        - configMapRef:
+            name: app-cm 

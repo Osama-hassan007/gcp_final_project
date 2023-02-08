@@ -1,7 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: redispod
+  name: redis
+  labels:
+    name: redis
 spec:
   containers:
   - name: redis
