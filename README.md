@@ -26,5 +26,3 @@
    *  Deployment of [python app]
    *  LoadBalancer that expose the whole deployment  
 
-
-## Check the live deployment from [here](35.226.255.113)
