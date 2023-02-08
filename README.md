@@ -1,7 +1,6 @@
 # Gcp Final Project
 # Infrastructure.
 
-* Gcp infrastructure built with terraform .
 ### consists of :
 * 1 VPC:
     * 2 Subnets "management", "restricted"
@@ -23,6 +22,6 @@
 ### deployment consists of :
    *  redis pod 
    *  service that exposes redis po on port 6379
-   *  Deployment of [python app]
+   *  Deployment of (python app)
    *  LoadBalancer that expose the whole deployment  
 
